@@ -1,12 +1,3 @@
-// var name = "Jame W Utt";
-// var role = "4th year student at Elon University";
-// var formattedName = HTMLheaderName.replace("%data%", name);
-// var formattedRole = HTMLheaderRole.replace("%data%", role);
-// $("#header").prepend(formattedRole);
-// $("#header").prepend(formattedName);
-
-//var skills = ["being the best","master of all 4 elements"];
-//$("#main").append(skills);
 
 var bio = {
 	"name": "James",
@@ -25,39 +16,50 @@ var bio = {
 var education = {
 	"schools": [
 		{
-			"name": "",
-			"location": "",
-			"degree": "",
-			"majors": [""],
-			"minors": ["", ""],
-			"dates": ""
+			"name": "Elon University",
+			"location": "Elon, NC",
+			"degree": "Bachelor of Science",
+			"majors": ["Computer Science"],
+			"minors": ["Applied Mathematics", "Physics"],
+			"dates": "2013 - 2017"
 		}
 	],
 	"onlineCourses": [
 		{
-			"title": "",
-			"school": "",
-			"date": "",
-			"url": ""
+			"title": "Complete Python Masterclass",
+			"school": "udemy",
+			"date": "In Progress",
+			"url": "https://www.udemy.com"
+		},
+		{
+			"title": "Python for Data Science and Machine Learning Bootcamp",
+			"school": "udemy",
+			"date": "In Progress",
+			"url": "https://www.udemy.com"
 		}
 	]
 };
 
 var work = {
-	"jobs" : [
+	"jobs": [
 		{
-			"employer" : "",
-			"title" : "",
-			"location" : "",
-			"dates" : "",
-			"description" : ""
+			"employer": "Acquia Inc.",
+			"title": "Engineering Intern",
+			"location": "Boston, MA",
+			"dates": "Summer 2016",
+			"description": "did some code stuff"
 		}
 	]
 };
 
-var projects = {};
+var projects = {
+	"projects": [
+		{
+			"title": "something I did",
+			"dates": "2017",
+			"description": "totally made this cool thing",
+			"images": ["images/me.jpg","images/fry.jpg"]
+		}
+	]
+};
 
-// Add data to index.html by replacing strings from helper.js and appending them to index.htlm
-//$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
-//$("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
-//$("#header").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
