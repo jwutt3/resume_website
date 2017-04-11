@@ -10,7 +10,12 @@ var bio = {
 	},
 	"bioPic": "images/me.jpg",
 	"welcomeMessage": "Hello!",
-	"skills": ["Master of all 4 elements", "guac making", "beer tasting", "Catching them ALL!"]
+	"skills": {
+		"programmingLanguages": ["Python","Java","PHP","SQL","Swift"],
+		"experienceWith": ["Agile/Scrum","Drupal"],
+		"applications": ["Eclipse","GitHub","MySQL"],
+		"operatingSystems": ["Mac OSX","Windows","Linux","iOS"]
+	}
 };
 
 // Education object to hold data about my college education and other courses
@@ -68,28 +73,42 @@ var projects = {
 };
 
 // Add name and role to top of page
-$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role))
-$("#header").prepend(HTMLheaderName.replace("%data%", bio.name))
+$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
+$("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
 
 // Add contact info below name header
-$("#topContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile))
-$("#topContacts").append(HTMLemail.replace("%data%", bio.contacts.email))
-$("#topContacts").append(HTMLgithub.replace("%data%", bio.contacts.github))
-$("#topContacts").append(HTMLlocation.replace("%data%", bio.contacts.location))
+$("#topContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
+$("#topContacts").append(HTMLemail.replace("%data%", bio.contacts.email));
+$("#topContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
+$("#topContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
 
 // Add picture to resume
-$("#header").append(HTMLbioPic.replace("%data%", bio.bioPic))
+$("#header").append(HTMLbioPic.replace("%data%", bio.bioPic));
 
 // Add Welcome line
-$("#header")
+$("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
+
+// Add start skills message
+$("#header").append(HTMLskillsStart);
+
+// Add skills to their respective sets
+$("#skills").append(HTMLskillSets.replace("%data%", "Programming Languages: "));
+
+var languagesString = bio.skills.programmingLanguages.join(", ");
+$("#skills").append(HTMLskills.replace("%data%", languagesString));
 
 
 // Add skills list to resume
+// for(var key in bio.skills) {
+// 	var obj = bio.skills[key];
+
+// }
+
 // if(bio.skills.length > 0) {
 // 	$("#header").append(HTMLskillsStart);
 // 	for (var i = 0; i < bio.skills.length; i++) {
-// 		var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
-// 		$("#skills").append(formattedSkill);
+// 		var formattedSkill = HTMLskillSets.replace("%data%", bio.skills[i]);
+// 			$("#skills").append(formattedSkill);
 // 	}
 	
 // }
