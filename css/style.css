@@ -29,6 +29,7 @@ h1 {
   color: #f5a623;
   line-height: 48px;
   display: inline;
+  padding-right: 10px;
 }
 
 h2 {
@@ -114,6 +115,10 @@ a {
 
 .white-text {
   font-weight: bold;
+  color: #fff;
+}
+
+.small-white-text {
   color: #fff;
 }
 

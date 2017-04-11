@@ -1,6 +1,6 @@
-
+// Bio object to hold basic information about me
 var bio = {
-	"name": "James",
+	"name": "James W Utt",
 	"role": "4th year student at Elon University",
 	"contacts": {
 		"mobile": "978-944-2203",
@@ -13,6 +13,7 @@ var bio = {
 	"skills": ["Master of all 4 elements", "guac making", "beer tasting", "Catching them ALL!"]
 };
 
+// Education object to hold data about my college education and other courses
 var education = {
 	"schools": [
 		{
@@ -40,6 +41,7 @@ var education = {
 	]
 };
 
+// Work objuect to hold data about previous or current work experience
 var work = {
 	"jobs": [
 		{
@@ -52,14 +54,43 @@ var work = {
 	]
 };
 
+// Projects object to store data about any personal projects I have worked on or am currently working on
 var projects = {
 	"projects": [
 		{
-			"title": "something I did",
+			"title": "Resume Website",
 			"dates": "2017",
-			"description": "totally made this cool thing",
-			"images": ["images/me.jpg","images/fry.jpg"]
+			"description": "I learned JavaScript to be able to build a dynamic website featuring my resume for potential employers",
+			"images": ["images/me.jpg","images/fry.jpg"],
+			"githubRepo": "insert url for github repository"
 		}
 	]
 };
+
+// Add name and role to top of page
+$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role))
+$("#header").prepend(HTMLheaderName.replace("%data%", bio.name))
+
+// Add contact info below name header
+$("#topContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile))
+$("#topContacts").append(HTMLemail.replace("%data%", bio.contacts.email))
+$("#topContacts").append(HTMLgithub.replace("%data%", bio.contacts.github))
+$("#topContacts").append(HTMLlocation.replace("%data%", bio.contacts.location))
+
+// Add picture to resume
+$("#header").append(HTMLbioPic.replace("%data%", bio.bioPic))
+
+// Add Welcome line
+$("#header")
+
+
+// Add skills list to resume
+// if(bio.skills.length > 0) {
+// 	$("#header").append(HTMLskillsStart);
+// 	for (var i = 0; i < bio.skills.length; i++) {
+// 		var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+// 		$("#skills").append(formattedSkill);
+// 	}
+	
+// }
 
