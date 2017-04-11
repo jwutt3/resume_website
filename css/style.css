@@ -122,6 +122,11 @@ a {
   color: #fff;
 }
 
+.skills-text {
+  color: #fff;
+  padding-left: 25px;
+}
+
 .gray {
   background-color: #f3f3f3;
   padding-bottom: 10px;

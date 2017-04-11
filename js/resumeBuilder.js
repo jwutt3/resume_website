@@ -93,23 +93,22 @@ $("#header").append(HTMLskillsStart);
 
 // Add skills to their respective sets
 $("#skills").append(HTMLskillSets.replace("%data%", "Programming Languages: "));
-
+// join the array of known programming languages and add it under Programming Languages set
 var languagesString = bio.skills.programmingLanguages.join(", ");
 $("#skills").append(HTMLskills.replace("%data%", languagesString));
 
+$("#skills").append(HTMLskillSets.replace("%data%", "Experience With: "));
+var experienceWithString = bio.skills.experienceWith.join(", ");
+$("#skills").append(HTMLskills.replace("%data%", experienceWithString));
 
-// Add skills list to resume
-// for(var key in bio.skills) {
-// 	var obj = bio.skills[key];
+$("#skills").append(HTMLskillSets.replace("%data%", "Applications: "));
+var applicationsString = bio.skills.applications.join(", ");
+$("#skills").append(HTMLskills.replace("%data%", applicationsString));
 
-// }
+$("#skills").append(HTMLskillSets.replace("%data%", "Oporating Systems: "));
+var oporatingSystemsString = bio.skills.operatingSystems.join(", ");
+$("#skills").append(HTMLskills.replace("%data%", oporatingSystemsString));
 
-// if(bio.skills.length > 0) {
-// 	$("#header").append(HTMLskillsStart);
-// 	for (var i = 0; i < bio.skills.length; i++) {
-// 		var formattedSkill = HTMLskillSets.replace("%data%", bio.skills[i]);
-// 			$("#skills").append(formattedSkill);
-// 	}
-	
-// }
+
+
 
