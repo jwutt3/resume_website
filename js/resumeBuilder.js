@@ -81,73 +81,89 @@ var projects = {
 
 /*
 	
-	Fill in the Header section
+	Add Header function
 
 */
-// Add name and role to top of page
-$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
-$("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
+function displayHeader() {
+	// Add name and role to top of page
+	$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
+	$("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
 
-// Add contact info below name header
-$("#topContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
-$("#topContacts").append(HTMLemail.replace("%data%", bio.contacts.email));
-$("#topContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
-$("#topContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
+	// Add contact info below name header
+	$("#topContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
+	$("#topContacts").append(HTMLemail.replace("%data%", bio.contacts.email));
+	$("#topContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
+	$("#topContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
 
-// Add picture to resume
-$("#header").append(HTMLbioPic.replace("%data%", bio.bioPic));
+	// Add picture to resume
+	$("#header").append(HTMLbioPic.replace("%data%", bio.bioPic));
 
-// Add Welcome line
-$("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
+	// Add Welcome line
+	$("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
 
-// Add start skills message
-$("#header").append(HTMLskillsStart);
+	// Add start skills message
+	$("#header").append(HTMLskillsStart);
 
-// Add skills to their respective skill sets
-$("#skills").append(HTMLskillSets.replace("%data%", "Programming Languages: "));
-var languagesString = bio.skills.programmingLanguages.join(", ");
-$("#skills").append(HTMLskills.replace("%data%", languagesString));
+	// Add skills to their respective skill sets
+	$("#skills").append(HTMLskillSets.replace("%data%", "Programming Languages: "));
+	var languagesString = bio.skills.programmingLanguages.join(", ");
+	$("#skills").append(HTMLskills.replace("%data%", languagesString));
 
-$("#skills").append(HTMLskillSets.replace("%data%", "Experience With: "));
-var experienceWithString = bio.skills.experienceWith.join(", ");
-$("#skills").append(HTMLskills.replace("%data%", experienceWithString));
+	$("#skills").append(HTMLskillSets.replace("%data%", "Experience With: "));
+	var experienceWithString = bio.skills.experienceWith.join(", ");
+	$("#skills").append(HTMLskills.replace("%data%", experienceWithString));
 
-$("#skills").append(HTMLskillSets.replace("%data%", "Applications: "));
-var applicationsString = bio.skills.applications.join(", ");
-$("#skills").append(HTMLskills.replace("%data%", applicationsString));
+	$("#skills").append(HTMLskillSets.replace("%data%", "Applications: "));
+	var applicationsString = bio.skills.applications.join(", ");
+	$("#skills").append(HTMLskills.replace("%data%", applicationsString));
 
-$("#skills").append(HTMLskillSets.replace("%data%", "Oporating Systems: "));
-var oporatingSystemsString = bio.skills.operatingSystems.join(", ");
-$("#skills").append(HTMLskills.replace("%data%", oporatingSystemsString));
-
+	$("#skills").append(HTMLskillSets.replace("%data%", "Oporating Systems: "));
+	var oporatingSystemsString = bio.skills.operatingSystems.join(", ");
+	$("#skills").append(HTMLskills.replace("%data%", oporatingSystemsString));
+}
 
 /*
 
-	Add Work Experience Section
+	Add Work Experience function
 
 */
-for(job in work.jobs) {
-	$("#workExperience").append(HTMLworkStart);
+function displayWork() {
+	for(job in work.jobs) {
+		$("#workExperience").append(HTMLworkStart);
 
-	// get place of work and title and append to web page
-	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+		// get place of work and title and append to web page
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
 
-	var formattedEmployerTitle = formattedEmployer + formattedTitle;
+		var formattedEmployerTitle = formattedEmployer + formattedTitle;
 
-	var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-	var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-	var formmattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+		var formmattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 
 
 
-	$(".work-entry:last").append(formattedEmployerTitle);
-	$(".work-entry:last").append(formattedDates);
-	$(".work-entry:last").append(formattedLocation);
-	$(".work-entry:last").append(formmattedDescription);
+		$(".work-entry:last").append(formattedEmployerTitle);
+		$(".work-entry:last").append(formattedDates);
+		$(".work-entry:last").append(formattedLocation);
+		$(".work-entry:last").append(formmattedDescription);
+	}
 }
 
+/*
 
+	Add Education Function
 
+*/
+function displayEducation() {
+	
+}
 
+/*
+	
+	Call Functions and buils web page
+
+*/
+displayHeader();
+displayWork();
 
