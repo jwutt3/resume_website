@@ -73,18 +73,18 @@ var projects = {
 			"title": "Resume Website",
 			"dates": "2017",
 			"description": "I learned JavaScript to be able to build a dynamic website featuring my resume for potential employers",
-			"images": ["images/me.jpg","images/fry.jpg"],
-			"githubRepo": "insert url for github repository"
+			"images": ["images/fry.jpg","images/fry.jpg"],
+			"githubRepo": "GitHub Repository"
 		}
 	]
 };
 
 /*
 	
-	Add Header function
+	Add display function to Bio object
 
 */
-function displayHeader() {
+bio.display = function() {
 	// Add name and role to top of page
 	$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
 	$("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
@@ -122,12 +122,13 @@ function displayHeader() {
 	$("#skills").append(HTMLskills.replace("%data%", oporatingSystemsString));
 }
 
+
 /*
 
-	Add Work Experience function
+	Add display function to work object
 
 */
-function displayWork() {
+work.display = function() {
 	for(job in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
 
@@ -152,18 +153,73 @@ function displayWork() {
 
 /*
 
-	Add Education Function
+	Add display function to education object
 
 */
-function displayEducation() {
-	
+education.display = function() {
+
 }
+
+/*
+
+	Add display function to projects object
+
+*/
+projects.display = function() {
+	for(project in projects.projects) {
+		$("#projects").append(HTMLprojectStart);
+
+		// get project attributes
+		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+		$(".project-entry:last").append(formattedTitle);
+
+		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+		$(".project-entry:last").append(formattedDates);
+
+		// edit this in helper.js so that is shows as a link rather than a string
+		var formattedGitURL = HTMLprojectGitURL.replace("%data%", projects.projects[project].githubRepo);
+		$(".project-entry:last").append(formattedGitURL);
+
+		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+		$(".project-entry:last").append(formattedDescription);
+
+		if(projects.projects[project].images.length > 0) {
+			for(image in projects.projects[project].images) {
+				var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+				$(".project-entry:last").append(formattedImage);
+			}
+		}
+	}
+}
+
+/*
+
+	Add google map to pinpoint the locations where I live and work
+
+*/
+//$("#mapDiv").append(googleMap);
+
+
+/*
+
+	click tracker function
+
+*/
+$(document).click(function(loc) {
+  var x = loc.pageX;
+  var y = loc.pageY;
+
+  logClicks(x,y);
+});
+
 
 /*
 	
 	Call Functions and buils web page
 
 */
-displayHeader();
-displayWork();
+bio.display();
+work.display();
+projects.display();
+$("#mapDiv").append(googleMap)
 
