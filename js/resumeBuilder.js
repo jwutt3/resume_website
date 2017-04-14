@@ -11,9 +11,9 @@ var bio = {
 	"bioPic": "images/me.jpg",
 	"welcomeMessage": "Hello!",
 	"skills": {
-		"programmingLanguages": ["Python","Java","PHP","SQL","Swift"],
-		"experienceWith": ["Agile/Scrum","Drupal"],
-		"applications": ["Eclipse","GitHub","MySQL"],
+		"programmingLanguages": ["Python","Java","PHP","SQL","C","Swift","Ruby","Go","HTML/CSS","RobotC","XML","Prolog"],
+		"experienceWith": ["Object Oriented Programming","Agile/Scrum","Git","JSON","Drupal","MySQL","REST","NumPy","Pandas","Web Development","MVC design patterns","Spring MVC","servlets/JSPs","Version Control","Debuggers","class structures & inheritance"],
+		"applications": ["Eclipse","GitHub","MySQL","GitHub","Jupyter Notebook","PhpStorm","NetBeans","Particle.io","XCode","Sublime Text","Apache Tomcat","Red Hat Openshift","Microsoft Office"],
 		"operatingSystems": ["Mac OSX","Windows","Linux","iOS"]
 	}
 };
