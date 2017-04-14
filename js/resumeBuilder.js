@@ -24,7 +24,7 @@ var education = {
 		{
 			"name": "Elon University",
 			"location": "Elon, NC",
-			"degree": "Bachelor of Science",
+			"degree": "BS",
 			"majors": ["Computer Science"],
 			"minors": ["Applied Mathematics", "Physics"],
 			"dates": "2013 - 2017"
@@ -53,14 +53,21 @@ var work = {
 			"employer": "Acquia Inc.",
 			"title": "Engineering Intern",
 			"location": "Boston, MA",
-			"dates": "Summer 2016",
+			"dates": "June 2016 - August 2016",
 			"description": "did some good code stuff"
+		},
+		{
+			"employer": "Acquia Inc.",
+			"title": "Engineering Intern",
+			"location": "Boston, MA",
+			"dates": "October 2015 - January 2016",
+			"description": "did some neat code stuff"
 		},
 		{
 			"employer": "Acquia Inc.",
 			"title": "Software Engineering Intern",
 			"location": "Boston, MA",
-			"dates": "Summer 2015",
+			"dates": "May 2015 - August 2015",
 			"description": "did some neat code stuff"
 		}
 	]
