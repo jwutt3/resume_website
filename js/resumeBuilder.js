@@ -27,7 +27,8 @@ var education = {
 			"degree": "BS",
 			"majors": ["Computer Science"],
 			"minors": ["Applied Mathematics", "Physics"],
-			"dates": "2013 - 2017"
+			"dates": "2013 - 2017",
+			"website": "https://www.elon.edu/home/"
 		}
 	],
 	"onlineCourses": [
@@ -35,13 +36,13 @@ var education = {
 			"title": "Complete Python Masterclass",
 			"school": "udemy",
 			"date": "In Progress",
-			"url": "https://www.udemy.com"
+			"url": "https://www.udemy.com/python-the-complete-python-developer-course/learn/v4/overview"
 		},
 		{
 			"title": "Python for Data Science and Machine Learning Bootcamp",
 			"school": "udemy",
 			"date": "In Progress",
-			"url": "https://www.udemy.com"
+			"url": "https://www.udemy.com/python-for-data-science-and-machine-learning-bootcamp/learn/v4/overview"
 		}
 	]
 };
@@ -54,6 +55,7 @@ var work = {
 			"title": "Engineering Intern",
 			"location": "Boston, MA",
 			"dates": "June 2016 - August 2016",
+			"website": "https://www.acquia.com/",
 			"description": "I worked on features and bug fixes, making overall improvements to Acquia's Content Hub product. I actively participated in an Agile development environment completing two week sprints."
 		},
 		{
@@ -61,6 +63,7 @@ var work = {
 			"title": "Engineering Intern",
 			"location": "Boston, MA",
 			"dates": "October 2015 - January 2016",
+			"website": "https://www.acquia.com/",
 			"description": "I wrote bash scripts to indentify and solve backend constraints to Acquia's products. I also worked on bug fixes and improvements to the products Acquia is building."
 		},
 		{
@@ -68,6 +71,7 @@ var work = {
 			"title": "Software Engineering Intern",
 			"location": "Boston, MA",
 			"dates": "May 2015 - August 2015",
+			"website": "https://www.acquia.com/",
 			"description": "I built and improved tools that team members can use to streamline and automate certain aspects of the development lifecycle."
 		}
 	]
@@ -79,9 +83,9 @@ var projects = {
 		{
 			"title": "Resume Website",
 			"dates": "2017",
-			"description": "I learned basic JavaScript syntax, which includes, manipulating data types (like JSON), building loops and creating functions in order to create a website for my resume.",
+			"description": "Using Udacity's JavaScrip Basics course I learned basic JavaScript syntax, which includes, manipulating data types (like JSON), building loops and creating functions in order to create a website for my resume.",
 			"images": [],
-			"githubRepo": "Click to see code on GitHub"
+			"githubRepo": "https://github.com/jwutt3/resume_website"
 		}
 	]
 };
@@ -140,7 +144,7 @@ work.display = function() {
 		$("#workExperience").append(HTMLworkStart);
 
 		// get place of work and title and append to web page
-		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer).replace("#", work.jobs[job].website);
 		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
 
 		var formattedEmployerTitle = formattedEmployer + formattedTitle;
@@ -169,7 +173,7 @@ education.display = function() {
 		$("#education").append(HTMLschoolStart);
 
 		// get education.schools values; NOTE: currently no way to display minors
-		var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
+		var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name).replace("#", education.schools[school].website);
 		$(".education-entry:last").append(formattedName);
 
 		var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
@@ -192,7 +196,7 @@ education.display = function() {
 		$("#education").append(HTMLonlineStart);
 
 		// get education.onlineCourses data
-		var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
+		var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title).replace("#", education.onlineCourses[course].url);
 		$(".education-entry:last").append(formattedTitle);
 
 		var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
@@ -201,8 +205,8 @@ education.display = function() {
 		var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].date);
 		$(".education-entry:last").append(formattedDates);
 
-		var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
-		$(".education-entry:last").append(formattedURL);
+		// var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
+		// $(".education-entry:last").append(formattedURL);
 	}
 }
 
@@ -216,15 +220,15 @@ projects.display = function() {
 		$("#projects").append(HTMLprojectStart);
 
 		// get project attributes
-		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title).replace("#", projects.projects[project].githubRepo);
 		$(".project-entry:last").append(formattedTitle);
 
 		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
 		$(".project-entry:last").append(formattedDates);
 
 		// edit this in helper.js so that is shows as a link rather than a string
-		var formattedGitURL = HTMLprojectGitURL.replace("%data%", projects.projects[project].githubRepo);
-		$(".project-entry:last").append(formattedGitURL);
+		// var formattedGitURL = HTMLprojectGitURL.replace("%data%", projects.projects[project].githubRepo);
+		// $(".project-entry:last").append(formattedGitURL);
 
 		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
 		$(".project-entry:last").append(formattedDescription);
