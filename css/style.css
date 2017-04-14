@@ -123,6 +123,7 @@ a {
 }
 
 .skills-text {
+  display: inline-block;
   color: #fff;
   padding-left: 25px;
 }
