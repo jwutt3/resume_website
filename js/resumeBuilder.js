@@ -9,7 +9,7 @@ var bio = {
 		"location": "Boston, MA"
 	},
 	"bioPic": "images/me.jpg",
-	"welcomeMessage": "Hello!",
+	"welcomeMessage": "Hello, I am a soon to be college graduate currently seeking employment as a software engineer.",
 	"skills": {
 		"programmingLanguages": ["Python","Java","PHP","SQL","C","Swift","Ruby","Go","HTML/CSS","RobotC","XML","Prolog"],
 		"experienceWith": ["Object Oriented Programming","Agile/Scrum","Git","JSON","Drupal","MySQL","REST","NumPy","Pandas","Web Development","MVC design patterns","Spring MVC","servlets/JSPs","Version Control","Debuggers","class structures & inheritance"],
@@ -34,13 +34,13 @@ var education = {
 	"onlineCourses": [
 		{
 			"title": "Complete Python Masterclass",
-			"school": "udemy",
+			"school": "Udemy",
 			"date": "In Progress",
 			"url": "https://www.udemy.com/python-the-complete-python-developer-course/learn/v4/overview"
 		},
 		{
 			"title": "Python for Data Science and Machine Learning Bootcamp",
-			"school": "udemy",
+			"school": "Udemy",
 			"date": "In Progress",
 			"url": "https://www.udemy.com/python-for-data-science-and-machine-learning-bootcamp/learn/v4/overview"
 		}
@@ -98,6 +98,7 @@ var projects = {
 bio.display = function() {
 	// Add name and role to top of page
 	$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
+	$("#header").prepend(HTMLheaderResume)
 	$("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
 
 	// Add contact info below name header
@@ -187,6 +188,9 @@ education.display = function() {
 
 		var formattedMajors = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
 		$(".education-entry:last").append(formattedMajors);
+
+		var formattedMinors = HTMLschoolMinors.replace("%data%", education.schools[school].minors.join(", "));
+		$(".education-entry:last").append(formattedMinors);
 	}
 	// start online course section
 	$("#education").append(HTMLonlineClasses);
