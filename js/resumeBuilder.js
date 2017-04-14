@@ -54,21 +54,21 @@ var work = {
 			"title": "Engineering Intern",
 			"location": "Boston, MA",
 			"dates": "June 2016 - August 2016",
-			"description": "did some good code stuff"
+			"description": "I worked on features and bug fixes, making overall improvements to Acquia's Content Hub product. I actively participated in an Agile development environment completing two week sprints."
 		},
 		{
 			"employer": "Acquia Inc.",
 			"title": "Engineering Intern",
 			"location": "Boston, MA",
 			"dates": "October 2015 - January 2016",
-			"description": "did some neat code stuff"
+			"description": "I wrote bash scripts to indentify and solve backend constraints to Acquia's products. I also worked on bug fixes and improvements to the products Acquia is building."
 		},
 		{
 			"employer": "Acquia Inc.",
 			"title": "Software Engineering Intern",
 			"location": "Boston, MA",
 			"dates": "May 2015 - August 2015",
-			"description": "did some neat code stuff"
+			"description": "I built and improved tools that team members can use to streamline and automate certain aspects of the development lifecycle."
 		}
 	]
 };
@@ -240,14 +240,6 @@ projects.display = function() {
 
 /*
 
-	Add google map to pinpoint the locations where I live and work
-
-*/
-//$("#mapDiv").append(googleMap);
-
-
-/*
-
 	click tracker function
 
 */
@@ -257,7 +249,6 @@ $(document).click(function(loc) {
 
   logClicks(x,y);
 });
-
 
 /*
 	
